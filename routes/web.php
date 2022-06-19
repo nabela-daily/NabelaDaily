@@ -1,7 +1,10 @@
 <?php
 use App\Http\Livewire\Posts;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\CollectionPostController;
+use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\PesananController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +31,11 @@ Route::middleware([
 });
 
 Route::get('/post', Posts::class);
+
+Route::resource('/projects', ProjectController::class);
+Route::get('users/{id}', function ($id) {});
+
+Route::resource('collection', CollectionPostController::class);
+Route::resource('blog', BlogPostController::class);
+Route::resource('/pesanans', PesananController::class);
+    
